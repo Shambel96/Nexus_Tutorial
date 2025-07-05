@@ -36,13 +36,12 @@ const printContentAll = async () => {
 
 printContentAll();
 
-// to print total numbers of characters in each file
+// to print total numbers of characters in for 3 files added
 
 const TotalNumberOfCharacters = async () => {
   try {
     const promises = filesHolder.map((file) => fs.readFile(file, "utf-8"));
     const responses = await Promise.all(promises);
-
     const totalChars = responses.reduce(
       (acc, content) => acc + content.length,
       0
